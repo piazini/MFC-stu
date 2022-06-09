@@ -6,7 +6,6 @@ Windows MFC frame
 gitee:   https://gitee.com/piazini/MFC-stu  
 github:  https://github.com/piazini/MFC-stu  
 
-
 清理编译临时文件：  
 clean-build.bat  
 
