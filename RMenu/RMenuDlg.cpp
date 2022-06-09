@@ -181,6 +181,13 @@ HCURSOR CRMenuDlg::OnQueryDragIcon()
 }
 
 
+/***************************************************************************
+*
+* 参考文章：
+* https://blog.csdn.net/weixin_43694353/article/details/84935050
+*
+***************************************************************************/
+
 //鼠标右键弹起
 void CRMenuDlg::OnRButtonUp(UINT nFlags, CPoint point) 
 {
