@@ -1,4 +1,6 @@
 @echo off
+echo 清理build过程的临时文件。。。
+pause
 del *.bsc /s 
 del *.ilk /s
 del *.obj /s 

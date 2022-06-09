@@ -1,16 +1,16 @@
 # MFC-stu
 Windows MFC frame
 
-Ô´Âë·ÃÎÊÁ´½Ó£º
+æºç è®¿é—®é“¾æ¥ï¼š
 gitee:   https://gitee.com/piazini/MFC-stu
 github:  https://github.com/piazini/MFC-stu
 
-ÇåÀí±àÒëÁÙÊ±ÎÄ¼ş£º
+æ¸…ç†ç¼–è¯‘ä¸´æ—¶æ–‡ä»¶ï¼š
 clean-build.bat
 
-ÏîÄ¿£¬Ä¿Â¼ËµÃ÷
-©À©¤DockedHide	¿¿±ßÒş²Ø´°¿Ú
-©À©¤GetFileIcon	»ñÈ¡ÎÄ¼şÍ¼±ê
-©À©¤HideWnd	¿¿±ßÒş²Ø´°¿Ú
-©À©¤RMenu	ÓÒ¼ü²Ëµ¥
-©¸©¤RWIni	¶ÁĞ´iniÅäÖÃÎÄ¼ş
+é¡¹ç›®ï¼Œç›®å½•è¯´æ˜
+â”œâ”€DockedHide	é è¾¹éšè—çª—å£
+â”œâ”€GetFileIcon	è·å–æ–‡ä»¶å›¾æ ‡
+â”œâ”€HideWnd	é è¾¹éšè—çª—å£
+â”œâ”€RMenu	å³é”®èœå•
+â””â”€RWIni	è¯»å†™inié…ç½®æ–‡ä»¶
