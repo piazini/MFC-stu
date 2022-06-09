@@ -2,7 +2,6 @@
 Windows MFC frame  
 
 源码访问链接：  
-
 gitee:   https://gitee.com/piazini/MFC-stu  
 github:  https://github.com/piazini/MFC-stu  
 
