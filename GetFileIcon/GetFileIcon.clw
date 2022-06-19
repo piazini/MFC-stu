@@ -13,9 +13,9 @@ Class2=CGetFileIconDlg
 Class3=CAboutDlg
 
 ResourceCount=3
-Resource1=IDD_GETFILEICON_DIALOG
+Resource1=IDD_ABOUTBOX
 Resource2=IDR_MAINFRAME
-Resource3=IDD_ABOUTBOX
+Resource3=IDD_GETFILEICON_DIALOG
 
 [CLS:CGetFileIconApp]
 Type=0
@@ -50,11 +50,10 @@ Control4=IDOK,button,1342373889
 [DLG:IDD_GETFILEICON_DIALOG]
 Type=1
 Class=CGetFileIconDlg
-ControlCount=6
+ControlCount=5
 Control1=IDC_EDIT1,edit,1350631552
 Control2=IDC_OPEN,button,1342242816
 Control3=IDC_STATIC1,static,1350701068
 Control4=IDC_GETION,button,1342242816
 Control5=IDC_Exit,button,1342242816
-Control6=IDC_LIST1,SysListView32,1350631489
 

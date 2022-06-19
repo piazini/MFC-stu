@@ -1,9 +1,9 @@
-// GetFileIconDlg.cpp : implementation file
+// DragDlg.cpp : implementation file
 //
 
 #include "stdafx.h"
-#include "GetFileIcon.h"
-#include "GetFileIconDlg.h"
+#include "Drag.h"
+#include "DragDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -57,42 +57,41 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
-// CGetFileIconDlg dialog
+// CDragDlg dialog
 
-CGetFileIconDlg::CGetFileIconDlg(CWnd* pParent /*=NULL*/)
-	: CDialog(CGetFileIconDlg::IDD, pParent)
+CDragDlg::CDragDlg(CWnd* pParent /*=NULL*/)
+	: CDialog(CDragDlg::IDD, pParent)
 {
-	//{{AFX_DATA_INIT(CGetFileIconDlg)
+	//{{AFX_DATA_INIT(CDragDlg)
 	m_filename = _T("");
 	//}}AFX_DATA_INIT
 	// Note that LoadIcon does not require a subsequent DestroyIcon in Win32
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
-void CGetFileIconDlg::DoDataExchange(CDataExchange* pDX)
+void CDragDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CGetFileIconDlg)
+	//{{AFX_DATA_MAP(CDragDlg)
 	DDX_Control(pDX, IDC_OPEN, m_open);
-	DDX_Text(pDX, IDC_EDIT1, m_filename);
+	DDX_Text(pDX, IDC_EDIT2, m_filename);
 	//}}AFX_DATA_MAP
 }
 
-BEGIN_MESSAGE_MAP(CGetFileIconDlg, CDialog)
-	//{{AFX_MSG_MAP(CGetFileIconDlg)
+BEGIN_MESSAGE_MAP(CDragDlg, CDialog)
+	//{{AFX_MSG_MAP(CDragDlg)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_OPEN, OnOpen)
-	ON_BN_CLICKED(IDC_GETION, OnGetion)
-	ON_BN_CLICKED(IDC_Exit, OnExit)
+	ON_WM_DROPFILES()		//支持界面拖拽
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
-// CGetFileIconDlg message handlers
+// CDragDlg message handlers
 
-BOOL CGetFileIconDlg::OnInitDialog()
+BOOL CDragDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
@@ -124,7 +123,7 @@ BOOL CGetFileIconDlg::OnInitDialog()
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
-void CGetFileIconDlg::OnSysCommand(UINT nID, LPARAM lParam)
+void CDragDlg::OnSysCommand(UINT nID, LPARAM lParam)
 {
 	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
 	{
@@ -141,7 +140,7 @@ void CGetFileIconDlg::OnSysCommand(UINT nID, LPARAM lParam)
 //  to draw the icon.  For MFC applications using the document/view model,
 //  this is automatically done for you by the framework.
 
-void CGetFileIconDlg::OnPaint() 
+void CDragDlg::OnPaint() 
 {
 	if (IsIconic())
 	{
@@ -168,22 +167,18 @@ void CGetFileIconDlg::OnPaint()
 
 // The system calls this to obtain the cursor to display while the user drags
 //  the minimized window.
-HCURSOR CGetFileIconDlg::OnQueryDragIcon()
+HCURSOR CDragDlg::OnQueryDragIcon()
 {
 	return (HCURSOR) m_hIcon;
 }
 
-/***************************************************************************
-*
-* 参考文章：
-* https://jingyan.baidu.com/article/7f766dafb8a0fe4101e1d0ac.html
-*
-***************************************************************************/
 
 //打开按钮
-void CGetFileIconDlg::OnOpen() 
+void CDragDlg::OnOpen() 
 {
 	// TODO: Add your control notification handler code here
+
+	//打开对话框文件筛选器
 	CString strFilter="All Files(*.*)|*.*|(*.txt)||";
 
 	CFileDialog dlg(
@@ -196,52 +191,57 @@ void CGetFileIconDlg::OnOpen()
 		OFN_FILEMUSTEXIST,
 		strFilter);
 
-
-	if(dlg.DoModal() == IDOK )//显示打开文件对话框
+	//以模态方式，显示打开文件对话框
+	if(dlg.DoModal() == IDOK )
 	{
 		m_filename = dlg.GetPathName();
 	}
 
-	//新增功能，原文代码中没有
-	//选中文件后，自动获取并显示图标
+	//更新变量到编辑框
 	UpdateData(FALSE);
-	SHFILEINFO    shfi; //文件信息结构变量用于存放函数调用的结果
+
+	//文件信息结构变量用于存放函数调用的结果
+	SHFILEINFO    shfi; 
 	memset(&shfi,0,sizeof(shfi));
 	SHGetFileInfo(m_filename, FILE_ATTRIBUTE_NORMAL, &shfi, sizeof(SHFILEINFO),SHGFI_ICON| SHGFI_LARGEICON);
-	CStatic *pStatic=(CStatic *)GetDlgItem(IDC_STATIC1);
+	CStatic *pStatic=(CStatic *)GetDlgItem(IDC_STATIC);
 
 	//设置静态控件的样式，使其可以使用图标，并试图标显示使居中
 	pStatic->ModifyStyle(0xF,SS_ICON|SS_CENTERIMAGE);
 
 	//设置静态控件图标
 	pStatic->SetIcon(shfi.hIcon);
-
 }
 
-//获取图标按钮
-void CGetFileIconDlg::OnGetion() 
-{
-	// TODO: Add your control notification handler code here
-	UpdateData(true);
 
-	SHFILEINFO    shfi; //文件信息结构变量用于存放函数调用的结果
+//支持界面拖拽
+// VC6.0 类向导里没有WM_DROPFILES消息，只能手动添加
+void CDragDlg::OnDropFiles(HDROP hDropInfo)
+{
+	
+	//获取拖拽文件信息
+	int nFiles = ::DragQueryFile(hDropInfo, (int) -1, NULL, 0);
+	TCHAR szFileName[_MAX_PATH];
+	::DragQueryFile(hDropInfo, 0, szFileName, _MAX_PATH);
+	//MessageBox(szFileName);
+
+	//文件信息结构变量用于存放函数调用的结果
+	SHFILEINFO    shfi; 
 	memset(&shfi,0,sizeof(shfi));
-	SHGetFileInfo(m_filename, FILE_ATTRIBUTE_NORMAL, &shfi, sizeof(SHFILEINFO),SHGFI_ICON);
-	CStatic *pStatic=(CStatic *)GetDlgItem(IDC_STATIC1);
+	SHGetFileInfo(szFileName, FILE_ATTRIBUTE_NORMAL, &shfi, sizeof(SHFILEINFO),SHGFI_ICON| SHGFI_LARGEICON);
+	CStatic *pStatic=(CStatic *)GetDlgItem(IDC_STATIC);
 
 	//设置静态控件的样式，使其可以使用图标，并试图标显示使居中
 	pStatic->ModifyStyle(0xF,SS_ICON|SS_CENTERIMAGE);
 
 	//设置静态控件图标
 	pStatic->SetIcon(shfi.hIcon);
+
+	//更新路径到编辑框
+	m_filename = szFileName;
+	UpdateData(FALSE);
+
+	//结束此次拖拽操作，并释放分配的资源
+	DragFinish(hDropInfo);
+
 }
-
-
-//退出按钮
-void CGetFileIconDlg::OnExit() 
-{
-	// TODO: Add your control notification handler code here
-	exit(0);
-}
-
-

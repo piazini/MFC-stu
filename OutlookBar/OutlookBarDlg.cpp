@@ -1,9 +1,9 @@
-// GetFileIconDlg.cpp : implementation file
+// OutlookBarDlg.cpp : implementation file
 //
 
 #include "stdafx.h"
-#include "GetFileIcon.h"
-#include "GetFileIconDlg.h"
+#include "OutlookBar.h"
+#include "OutlookBarDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -57,42 +57,38 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
-// CGetFileIconDlg dialog
+// COutlookBarDlg dialog
 
-CGetFileIconDlg::CGetFileIconDlg(CWnd* pParent /*=NULL*/)
-	: CDialog(CGetFileIconDlg::IDD, pParent)
+COutlookBarDlg::COutlookBarDlg(CWnd* pParent /*=NULL*/)
+	: CDialog(COutlookBarDlg::IDD, pParent)
 {
-	//{{AFX_DATA_INIT(CGetFileIconDlg)
-	m_filename = _T("");
+	//{{AFX_DATA_INIT(COutlookBarDlg)
+		// NOTE: the ClassWizard will add member initialization here
 	//}}AFX_DATA_INIT
 	// Note that LoadIcon does not require a subsequent DestroyIcon in Win32
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
-void CGetFileIconDlg::DoDataExchange(CDataExchange* pDX)
+void COutlookBarDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CGetFileIconDlg)
-	DDX_Control(pDX, IDC_OPEN, m_open);
-	DDX_Text(pDX, IDC_EDIT1, m_filename);
+	//{{AFX_DATA_MAP(COutlookBarDlg)
+		// NOTE: the ClassWizard will add DDX and DDV calls here
 	//}}AFX_DATA_MAP
 }
 
-BEGIN_MESSAGE_MAP(CGetFileIconDlg, CDialog)
-	//{{AFX_MSG_MAP(CGetFileIconDlg)
+BEGIN_MESSAGE_MAP(COutlookBarDlg, CDialog)
+	//{{AFX_MSG_MAP(COutlookBarDlg)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-	ON_BN_CLICKED(IDC_OPEN, OnOpen)
-	ON_BN_CLICKED(IDC_GETION, OnGetion)
-	ON_BN_CLICKED(IDC_Exit, OnExit)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
-// CGetFileIconDlg message handlers
+// COutlookBarDlg message handlers
 
-BOOL CGetFileIconDlg::OnInitDialog()
+BOOL COutlookBarDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
@@ -124,7 +120,7 @@ BOOL CGetFileIconDlg::OnInitDialog()
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
-void CGetFileIconDlg::OnSysCommand(UINT nID, LPARAM lParam)
+void COutlookBarDlg::OnSysCommand(UINT nID, LPARAM lParam)
 {
 	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
 	{
@@ -141,7 +137,7 @@ void CGetFileIconDlg::OnSysCommand(UINT nID, LPARAM lParam)
 //  to draw the icon.  For MFC applications using the document/view model,
 //  this is automatically done for you by the framework.
 
-void CGetFileIconDlg::OnPaint() 
+void COutlookBarDlg::OnPaint() 
 {
 	if (IsIconic())
 	{
@@ -168,80 +164,7 @@ void CGetFileIconDlg::OnPaint()
 
 // The system calls this to obtain the cursor to display while the user drags
 //  the minimized window.
-HCURSOR CGetFileIconDlg::OnQueryDragIcon()
+HCURSOR COutlookBarDlg::OnQueryDragIcon()
 {
 	return (HCURSOR) m_hIcon;
 }
-
-/***************************************************************************
-*
-* 参考文章：
-* https://jingyan.baidu.com/article/7f766dafb8a0fe4101e1d0ac.html
-*
-***************************************************************************/
-
-//打开按钮
-void CGetFileIconDlg::OnOpen() 
-{
-	// TODO: Add your control notification handler code here
-	CString strFilter="All Files(*.*)|*.*|(*.txt)||";
-
-	CFileDialog dlg(
-		TRUE, 
-		NULL, 
-		NULL, 
-		OFN_EXPLORER|
-		OFN_HIDEREADONLY|
-		OFN_ENABLESIZING|
-		OFN_FILEMUSTEXIST,
-		strFilter);
-
-
-	if(dlg.DoModal() == IDOK )//显示打开文件对话框
-	{
-		m_filename = dlg.GetPathName();
-	}
-
-	//新增功能，原文代码中没有
-	//选中文件后，自动获取并显示图标
-	UpdateData(FALSE);
-	SHFILEINFO    shfi; //文件信息结构变量用于存放函数调用的结果
-	memset(&shfi,0,sizeof(shfi));
-	SHGetFileInfo(m_filename, FILE_ATTRIBUTE_NORMAL, &shfi, sizeof(SHFILEINFO),SHGFI_ICON| SHGFI_LARGEICON);
-	CStatic *pStatic=(CStatic *)GetDlgItem(IDC_STATIC1);
-
-	//设置静态控件的样式，使其可以使用图标，并试图标显示使居中
-	pStatic->ModifyStyle(0xF,SS_ICON|SS_CENTERIMAGE);
-
-	//设置静态控件图标
-	pStatic->SetIcon(shfi.hIcon);
-
-}
-
-//获取图标按钮
-void CGetFileIconDlg::OnGetion() 
-{
-	// TODO: Add your control notification handler code here
-	UpdateData(true);
-
-	SHFILEINFO    shfi; //文件信息结构变量用于存放函数调用的结果
-	memset(&shfi,0,sizeof(shfi));
-	SHGetFileInfo(m_filename, FILE_ATTRIBUTE_NORMAL, &shfi, sizeof(SHFILEINFO),SHGFI_ICON);
-	CStatic *pStatic=(CStatic *)GetDlgItem(IDC_STATIC1);
-
-	//设置静态控件的样式，使其可以使用图标，并试图标显示使居中
-	pStatic->ModifyStyle(0xF,SS_ICON|SS_CENTERIMAGE);
-
-	//设置静态控件图标
-	pStatic->SetIcon(shfi.hIcon);
-}
-
-
-//退出按钮
-void CGetFileIconDlg::OnExit() 
-{
-	// TODO: Add your control notification handler code here
-	exit(0);
-}
-
-

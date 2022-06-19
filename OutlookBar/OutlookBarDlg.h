@@ -1,31 +1,30 @@
-// GetFileIconDlg.h : header file
+// OutlookBarDlg.h : header file
 //
 
-#if !defined(AFX_GETFILEICONDLG_H__EB2B77A0_CD6C_4742_8AAA_0B340FE1AD3A__INCLUDED_)
-#define AFX_GETFILEICONDLG_H__EB2B77A0_CD6C_4742_8AAA_0B340FE1AD3A__INCLUDED_
+#if !defined(AFX_OUTLOOKBARDLG_H__3DF225A1_9D51_412D_ACD2_CB45B2E36C70__INCLUDED_)
+#define AFX_OUTLOOKBARDLG_H__3DF225A1_9D51_412D_ACD2_CB45B2E36C70__INCLUDED_
 
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
 
 /////////////////////////////////////////////////////////////////////////////
-// CGetFileIconDlg dialog
+// COutlookBarDlg dialog
 
-class CGetFileIconDlg : public CDialog
+class COutlookBarDlg : public CDialog
 {
 // Construction
 public:
-	CGetFileIconDlg(CWnd* pParent = NULL);	// standard constructor
+	COutlookBarDlg(CWnd* pParent = NULL);	// standard constructor
 
 // Dialog Data
-	//{{AFX_DATA(CGetFileIconDlg)
-	enum { IDD = IDD_GETFILEICON_DIALOG };
-	CButton	m_open;
-	CString	m_filename;
+	//{{AFX_DATA(COutlookBarDlg)
+	enum { IDD = IDD_OUTLOOKBAR_DIALOG };
+		// NOTE: the ClassWizard will add data members here
 	//}}AFX_DATA
 
 	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CGetFileIconDlg)
+	//{{AFX_VIRTUAL(COutlookBarDlg)
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
 	//}}AFX_VIRTUAL
@@ -35,14 +34,11 @@ protected:
 	HICON m_hIcon;
 
 	// Generated message map functions
-	//{{AFX_MSG(CGetFileIconDlg)
+	//{{AFX_MSG(COutlookBarDlg)
 	virtual BOOL OnInitDialog();
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
-	afx_msg void OnOpen();
-	afx_msg void OnGetion();
-	afx_msg void OnExit();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };
@@ -50,4 +46,4 @@ protected:
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
-#endif // !defined(AFX_GETFILEICONDLG_H__EB2B77A0_CD6C_4742_8AAA_0B340FE1AD3A__INCLUDED_)
+#endif // !defined(AFX_OUTLOOKBARDLG_H__3DF225A1_9D51_412D_ACD2_CB45B2E36C70__INCLUDED_)
