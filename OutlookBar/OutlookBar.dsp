@@ -66,8 +66,8 @@ LINK32=link.exe
 # PROP Output_Dir "Debug"
 # PROP Intermediate_Dir "Debug"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Yu"stdafx.h" /FD /GZ  /c
-# ADD CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Yu"stdafx.h" /FD /GZ   /c
+# ADD BASE CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Yu"stdafx.h" /FD /GZ /c
+# ADD CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR /Yu"stdafx.h" /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x804 /d "_DEBUG" /d "_AFXDLL"
@@ -145,6 +145,98 @@ SOURCE=.\XTOutBarCtrl.h
 # Begin Group "Resource Files"
 
 # PROP Default_Filter "ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
+# Begin Source File
+
+SOURCE=.\res\access.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\acroread.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\akregator.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\aktion.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\applixware.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\ark.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\arts.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\artsbuilder.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\artscontrol.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\artsmidimanager.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\background.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\browser.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon1.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon10.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon11.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon2.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon3.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon4.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon5.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon6.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon7.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon8.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon9.ico
+# End Source File
 # Begin Source File
 
 SOURCE=.\res\OutlookBar.ico

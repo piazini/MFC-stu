@@ -5,15 +5,17 @@ Windows MFC frame
 gitee:   https://gitee.com/piazini/MFC-stu  
 github:  https://github.com/piazini/MFC-stu  
 
-清理编译临时文件：  
+提交代码前，清理编译临时文件：  
 clean-build.bat  
 
 项目，目录说明  
+├─Other	其他，一些收集的代码
 ├─DockedHide	靠边隐藏窗口  
 ├─GetFileIcon	获取文件图标  
 ├─HideWnd	靠边隐藏窗口  
 ├─RMenu	右键菜单  
-└─RWIni	读写ini配置文件  
+├─RWIni	读写ini配置文件
+└─OutlookBar 仿Outloo上下滚动菜单 
   
   
   

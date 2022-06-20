@@ -20,6 +20,15 @@
 #endif // _AFX_NO_AFXCMN_SUPPORT
 
 
+#include <comdef.h>//初始化一下com口
+#ifndef ULONG_PTR
+#define ULONG_PTR unsigned long*
+#include "GdiPlus.h"
+using namespace Gdiplus;
+#endif
+#pragma comment(lib,"gdiplus.lib")
+
+
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 

@@ -8,6 +8,10 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
+//#include "MySplitterWnd.h" // for CMySplitterWnd
+#include "toolbar/XTOutBarCtrl.h"
+
+
 /////////////////////////////////////////////////////////////////////////////
 // COutlookBarDlg dialog
 
@@ -28,6 +32,21 @@ public:
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
 	//}}AFX_VIRTUAL
+
+// Attributes
+public:
+	bool m_bInitialized;
+	bool m_bShouldSetXColumn;
+	//CMySplitterWnd m_wndSplitter;
+	//CMySplitterWnd* m_pWndSplitter;
+	CXTOutBarCtrl	m_wndOutlookBar;
+	CImageList	m_ImageLarge;
+	CImageList	m_ImageSmall;
+	CImageList	m_ImageFolder;
+
+	bool		m_bDestroy;
+public:
+	void InitializeOutlookBar();
 
 // Implementation
 protected:

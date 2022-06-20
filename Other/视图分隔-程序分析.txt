@@ -1,0 +1,9 @@
+iFolder设计：CXTOutBarCtrl::CXTOutBarCtrl 第250行
+NoFormViewInRightPaneHorizSplitterView.cpp 
+	第63行	拆分窗口
+	
+SplitterView.cpp 
+	第71行	将窗口拆分成一行两列
+	第86行	右侧框内容，显示CMyTreeView.cpp内容(注意源码中显示位0,0改成0,1)
+	第87行	右侧框内容，显示CRightPaneHorizSplitterView.cpp内容
+	第91行	左边列表框方法调用

@@ -67,6 +67,29 @@ END
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON    DISCARDABLE     "res\\OutlookBar.ico"
+IDI_ICON1               ICON    DISCARDABLE     "res\\icon11.ico"
+IDI_ICON2               ICON    DISCARDABLE     "res\\icon1.ico"
+IDI_ICON3               ICON    DISCARDABLE     "res\\icon2.ico"
+IDI_ICON4               ICON    DISCARDABLE     "res\\icon3.ico"
+IDI_ICON5               ICON    DISCARDABLE     "res\\icon4.ico"
+IDI_ICON6               ICON    DISCARDABLE     "res\\icon5.ico"
+IDI_ICON7               ICON    DISCARDABLE     "res\\icon6.ico"
+IDI_ICON8               ICON    DISCARDABLE     "res\\icon7.ico"
+IDI_ICON9               ICON    DISCARDABLE     "res\\icon8.ico"
+IDI_ICON10              ICON    DISCARDABLE     "res\\icon9.ico"
+IDI_ICON11              ICON    DISCARDABLE     "res\\icon10.ico"
+IDI_ICON12              ICON    DISCARDABLE     "res\\access.ico"
+IDI_ICON13              ICON    DISCARDABLE     "res\\acroread.ico"
+IDI_ICON14              ICON    DISCARDABLE     "res\\akregator.ico"
+IDI_ICON15              ICON    DISCARDABLE     "res\\aktion.ico"
+IDI_ICON16              ICON    DISCARDABLE     "res\\applixware.ico"
+IDI_ICON17              ICON    DISCARDABLE     "res\\ark.ico"
+IDI_ICON18              ICON    DISCARDABLE     "res\\arts.ico"
+IDI_ICON19              ICON    DISCARDABLE     "res\\artsbuilder.ico"
+IDI_ICON20              ICON    DISCARDABLE     "res\\artscontrol.ico"
+IDI_ICON21              ICON    DISCARDABLE     "res\\artsmidimanager.ico"
+IDI_ICON22              ICON    DISCARDABLE     "res\\background.ico"
+IDI_ICON23              ICON    DISCARDABLE     "res\\browser.ico"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -90,8 +113,6 @@ EXSTYLE WS_EX_APPWINDOW
 CAPTION "OutlookBar"
 FONT 9, "ËÎÌו"
 BEGIN
-    CONTROL         "List1",IDC_LIST1,"SysListView32",WS_BORDER | WS_TABSTOP,
-                    7,7,168,257
 END
 
 

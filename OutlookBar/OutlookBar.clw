@@ -47,6 +47,5 @@ Control4=IDOK,button,1342373889
 [DLG:IDD_OUTLOOKBAR_DIALOG]
 Type=1
 Class=COutlookBarDlg
-ControlCount=1
-Control1=IDC_LIST1,SysListView32,1350631424
+ControlCount=0
 

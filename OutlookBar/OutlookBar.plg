@@ -6,30 +6,35 @@
 --------------------Configuration: OutlookBar - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSPCC05.tmp" with contents
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSPB913.tmp" with contents
 [
-/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/OutlookBar.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ   /c 
-"D:\MFC-stu\OutlookBar\XTOutBarCtrl.cpp"
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/OutlookBar.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\MFC-stu\OutlookBar\OutlookBarDlg.cpp"
 ]
-Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSPCC05.tmp" 
+Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSPB913.tmp" 
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSPB924.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/OutlookBar.pdb" /debug /machine:I386 /out:"Debug/OutlookBar.exe" /pdbtype:sept 
+".\Debug\OutlookBar.obj"
+".\Debug\OutlookBarDlg.obj"
+".\Debug\StdAfx.obj"
+".\Debug\XTMemDC.obj"
+".\Debug\XTOutBarCtrl.obj"
+".\Debug\OutlookBar.res"
+]
+Creating command line "link.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSPB924.tmp"
 <h3>Output Window</h3>
 Compiling...
-XTOutBarCtrl.cpp
-D:\MFC-stu\OutlookBar\XTOutBarCtrl.cpp(1985) : error C2065: 'Graphics' : undeclared identifier
-D:\MFC-stu\OutlookBar\XTOutBarCtrl.cpp(1985) : error C2146: syntax error : missing ';' before identifier 'graphics'
-D:\MFC-stu\OutlookBar\XTOutBarCtrl.cpp(1985) : error C2065: 'graphics' : undeclared identifier
-D:\MFC-stu\OutlookBar\XTOutBarCtrl.cpp(1986) : error C2065: 'Image' : undeclared identifier
-D:\MFC-stu\OutlookBar\XTOutBarCtrl.cpp(1986) : error C2146: syntax error : missing ';' before identifier 'image'
-D:\MFC-stu\OutlookBar\XTOutBarCtrl.cpp(1986) : error C2065: 'image' : undeclared identifier
-D:\MFC-stu\OutlookBar\XTOutBarCtrl.cpp(1989) : error C2228: left of '.GetHeight' must have class/struct/union type
-D:\MFC-stu\OutlookBar\XTOutBarCtrl.cpp(1990) : error C2228: left of '.DrawImage' must have class/struct/union type
-D:\MFC-stu\OutlookBar\XTOutBarCtrl.cpp(1990) : error C2228: left of '.GetHeight' must have class/struct/union type
-Ö´ÐÐ cl.exe Ê±³ö´í.
+OutlookBarDlg.cpp
+Linking...
+Creating command line "bscmake.exe /nologo /o"Debug/OutlookBar.bsc"  ".\Debug\StdAfx.sbr" ".\Debug\OutlookBar.sbr" ".\Debug\OutlookBarDlg.sbr" ".\Debug\XTMemDC.sbr" ".\Debug\XTOutBarCtrl.sbr""
+Creating browse info file...
+<h3>Output Window</h3>
 
 
 
 <h3>Results</h3>
-XTOutBarCtrl.obj - 1 error(s), 0 warning(s)
+OutlookBar.exe - 0 error(s), 0 warning(s)
 </pre>
 </body>
 </html>
