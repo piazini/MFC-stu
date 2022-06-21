@@ -252,3 +252,4 @@ void COutlookBarDlg::InitializeOutlookBar()
 	//	m_wndSplitter1.SetSplitterStyle(XT_SPLIT_NOFULLDRAG);
 
 }
+
