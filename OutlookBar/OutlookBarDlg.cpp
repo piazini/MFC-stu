@@ -116,6 +116,17 @@ BOOL COutlookBarDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 	
 	// TODO: Add extra initialization here
+	//创建列表框
+	m_wndOutlookBar.Create(
+		WS_CHILD|WS_VISIBLE|WS_CLIPCHILDREN,	//样式
+		CRect(0,0,280,450),		//列表窗口在父窗口大小
+		this,	//父窗口
+		0,	//列表ID
+		OBS_XT_DEFAULT);		//标记
+	//设置列表框背景颜色(白)&文字颜色(黑)
+	m_wndOutlookBar.SetBackColor(RGB(255,255,255));
+	m_wndOutlookBar.SetTextColor(RGB(0,0,0));
+
 	InitializeOutlookBar();
 
 

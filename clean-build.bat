@@ -12,6 +12,7 @@ del *.idb /s
 del *.pdb /s 
 
 del *.ncb /s 
-del *.opt /s 
-
+del *.opt /s
+ 
+del *.exe /s 
 pause
