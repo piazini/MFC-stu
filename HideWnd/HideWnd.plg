@@ -6,20 +6,11 @@
 --------------------Configuration: HideWnd - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP8508.tmp" with contents
-[
-/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/HideWnd.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
-"C:\Users\Administrator\Desktop\baidu1322583838\HideWnd\HideWndDlg.cpp"
-]
-Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP8508.tmp" 
-Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/HideWnd.pdb" /debug /machine:I386 /out:"Debug/HideWnd.exe" /pdbtype:sept  .\Debug\HideWnd.obj .\Debug\HideWndDlg.obj .\Debug\StdAfx.obj .\Debug\HideWnd.res "
+Creating command line "rc.exe /l 0x804 /fo"Debug/HideWnd.res" /d "_DEBUG" /d "_AFXDLL" "D:\MFC-stu\HideWnd\HideWnd.rc"" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/HideWnd.pdb" /debug /machine:I386 /out:"Debug/HideWnd.exe" /pdbtype:sept  ".\Debug\HideWnd.obj" ".\Debug\HideWndDlg.obj" ".\Debug\StdAfx.obj" ".\Debug\HideWnd.res" "
 <h3>Output Window</h3>
-Compiling...
-HideWndDlg.cpp
+Compiling resources...
 Linking...
-Creating command line "bscmake.exe /nologo /o"Debug/HideWnd.bsc"  .\Debug\StdAfx.sbr .\Debug\HideWnd.sbr .\Debug\HideWndDlg.sbr"
-Creating browse info file...
-<h3>Output Window</h3>
 
 
 

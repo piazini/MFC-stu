@@ -6,18 +6,18 @@
 --------------------Configuration: DockedHide - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP25CA.tmp" with contents
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSPACA2.tmp" with contents
 [
 /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/DockedHide.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
-"C:\Users\Administrator\Desktop\baidu1322583838\DockedHide\DockedHideDlg.cpp"
+"D:\MFC-stu\DockedHide\DockedHideDlg.cpp"
 ]
-Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP25CA.tmp" 
-Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/DockedHide.pdb" /debug /machine:I386 /out:"Debug/DockedHide.exe" /pdbtype:sept  .\Debug\DockedHide.obj .\Debug\DockedHideDlg.obj .\Debug\StdAfx.obj .\Debug\DockedHide.res "
+Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSPACA2.tmp" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/DockedHide.pdb" /debug /machine:I386 /out:"Debug/DockedHide.exe" /pdbtype:sept  ".\Debug\DockedHide.obj" ".\Debug\DockedHideDlg.obj" ".\Debug\StdAfx.obj" ".\Debug\DockedHide.res" "
 <h3>Output Window</h3>
 Compiling...
 DockedHideDlg.cpp
 Linking...
-Creating command line "bscmake.exe /nologo /o"Debug/DockedHide.bsc"  .\Debug\StdAfx.sbr .\Debug\DockedHide.sbr .\Debug\DockedHideDlg.sbr"
+Creating command line "bscmake.exe /nologo /o"Debug/DockedHide.bsc"  ".\Debug\StdAfx.sbr" ".\Debug\DockedHide.sbr" ".\Debug\DockedHideDlg.sbr""
 Creating browse info file...
 <h3>Output Window</h3>
 

@@ -21,17 +21,18 @@ public:
 	BOOL isMouseInWindow();
 	CDockedHideDlg(CWnd* pParent = NULL);	// standard constructor
 
-// Dialog Data
+	// Dialog Data
 	//{{AFX_DATA(CDockedHideDlg)
 	enum { IDD = IDD_DOCKEDHIDE_DIALOG };
-	enum HidePosition {
-		NO,	
-		LEFT,
-		RIGHT,
-		TOP
-	};
-		// NOTE: the ClassWizard will add data members here
+	// NOTE: the ClassWizard will add data members here
 	//}}AFX_DATA
+
+	enum HidePosition{
+	NO,  //非靠边
+	LEFT, //靠左
+	RIGHT,//靠右
+	TOP	  //靠上
+	};
 
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CDockedHideDlg)
@@ -44,7 +45,9 @@ protected:
 	HICON m_hIcon;
 	DWORD m_lastActiveTime;
 	int m_screenX,m_screenY;
-	HidePosition m_hidePosition;
+	HidePosition m_hidePosition; 
+
+	CRect default_rect;		//存储对话框默认大小
 
 	// Generated message map functions
 	//{{AFX_MSG(CDockedHideDlg)
@@ -53,7 +56,9 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
-	afx_msg void OnCancelMode(UINT nFlags, CPoint point);
+	afx_msg void OnNcMouseMove(UINT nFlags, CPoint point);
+//	afx_msg void OnCancelMode(UINT nFlags, CPoint point);
+//	afx_msg void OnTimer(UINT nIDEvent);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

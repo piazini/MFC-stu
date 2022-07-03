@@ -6,16 +6,29 @@
 --------------------Configuration: SLiderCtrl - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP27BD.tmp" with contents
+Creating command line "rc.exe /l 0x804 /fo"Debug/SLiderCtrl.res" /d "_DEBUG" /d "_AFXDLL" "D:\MFC-stu\SLiderCtrl\SLiderCtrl.rc"" 
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP54E3.tmp" with contents
 [
-/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/SLiderCtrl.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ   /c 
-"C:\Users\Administrator\Desktop\MFC\SLiderCtrl\SLiderCtrlDlg.cpp"
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/SLiderCtrl.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\MFC-stu\SLiderCtrl\SLiderCtrl.cpp"
+"D:\MFC-stu\SLiderCtrl\SLiderCtrlDlg.cpp"
 ]
-Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP27BD.tmp" 
-Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/SLiderCtrl.pdb" /debug /machine:I386 /out:"Debug/SLiderCtrl.exe" /pdbtype:sept  .\Debug\SLiderCtrl.obj .\Debug\SLiderCtrlDlg.obj .\Debug\StdAfx.obj .\Debug\SLiderCtrl.res "
+Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP54E3.tmp" 
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP54E4.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/SLiderCtrl.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\MFC-stu\SLiderCtrl\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP54E4.tmp" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/SLiderCtrl.pdb" /debug /machine:I386 /out:"Debug/SLiderCtrl.exe" /pdbtype:sept  ".\Debug\SLiderCtrl.obj" ".\Debug\SLiderCtrlDlg.obj" ".\Debug\StdAfx.obj" ".\Debug\SLiderCtrl.res" "
 <h3>Output Window</h3>
+Compiling resources...
 Compiling...
+StdAfx.cpp
+Compiling...
+SLiderCtrl.cpp
 SLiderCtrlDlg.cpp
+Generating Code...
 Linking...
 
 

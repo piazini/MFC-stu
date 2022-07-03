@@ -7,19 +7,19 @@
 </h3>
 <h3>Command Lines</h3>
 Creating command line "rc.exe /l 0x804 /fo"Debug/RWIni.res" /d "_DEBUG" /d "_AFXDLL" "D:\MFC-stu\RWIni\RWIni.rc"" 
-Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP9F3A.tmp" with contents
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP7524.tmp" with contents
 [
 /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/RWIni.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
 "D:\MFC-stu\RWIni\RWIni.cpp"
 "D:\MFC-stu\RWIni\RWIniDlg.cpp"
 ]
-Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP9F3A.tmp" 
-Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP9F4B.tmp" with contents
+Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP7524.tmp" 
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP7535.tmp" with contents
 [
 /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/RWIni.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
 "D:\MFC-stu\RWIni\StdAfx.cpp"
 ]
-Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP9F4B.tmp" 
+Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP7535.tmp" 
 Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/RWIni.pdb" /debug /machine:I386 /out:"Debug/RWIni.exe" /pdbtype:sept  ".\Debug\RWIni.obj" ".\Debug\RWIniDlg.obj" ".\Debug\StdAfx.obj" ".\Debug\RWIni.res" "
 <h3>Output Window</h3>
 Compiling resources...
